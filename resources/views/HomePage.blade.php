@@ -12,7 +12,7 @@
             <td>Location : {{ $events->Location }} </td> <br>
             <td>Price : {{ $events->Price }} </td> <br>
             <td>Description :{{ $events->event_details->Description }} </td> <br>
-            <td>Organizer Name :{{ $events->event_organizers->OrganizerName }} </td> <br>
+            <td>Organizer Name :{{ $events->event_organizers->OrganizerName }} </td>  <br>
         </tr>
         <br>
     @endforeach
