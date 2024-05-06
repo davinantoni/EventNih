@@ -2,10 +2,28 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\EventType;
+use App\Models\EventDetail;
+use App\Models\EventOrganizer;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Event extends Model
 {
     use HasFactory;
+
+    public function event_details()
+    {
+        return $this->hasOne(EventDetail::class);
+    }
+
+    public function event_types()
+    {
+        return $this->belongsTo(EventType::class, 'eventType_id', 'id');
+    }
+
+    public function event_organizers()
+    {
+        return $this->hasOne(EventOrganizer::class, 'id', 'organizer_id');
+    }
 }
