@@ -24,6 +24,6 @@ class Event extends Model
 
     public function event_organizers()
     {
-        return $this->hasOne(EventOrganizer::class, 'id', 'organizer_id');
+        return $this->belongsTo(EventOrganizer::class, 'organizer_id', 'id');
     }
 }
