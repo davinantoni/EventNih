@@ -1,4 +1,4 @@
-@extends('Layout.navbar')
+@extends('Layout.layout')
 @section('title', 'Home')
 @section('content')
     <h1>HomePage</h1>
