@@ -13,19 +13,26 @@
     <title>EventNih! |@@yield('title')</title>
 </head>
 <body>
-    <nav>
-        <div class="container">
-            <div class="logo">
-                <img src="/assets/logo.png" alt="">
-            </div>
-            <div class="search-bar">
-                <i class="uil uil-search"></i>
-                <input type="search" placeholder="Cari event kesukaan kamu di sini">
-            </div>
-
-            <div class="button">
-                <p>Buat Akun</p>
-            </div>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a href="/">
+                <img src="/assets/logo.png" alt="Logo" class="logo">
+            </a>
+        </div>
+        <div class="navbar-center">
+            <input type="text" class="search-input" placeholder="Cari event kesukaan kamu di sini">
+            <button class="search-button">
+                <img src="/assets/search.png" alt="Search">
+            </button>
+        </div>
+        <div class="navbar-right">
+            <a href="" class="create-event">Buat Event</a>
+            <a href="">
+                <img src="/assets/shopping-cart.png" alt="Cart" class="icon">
+            </a>
+            <a href="">
+                <img src="/assets/profile.png" alt="Profile" class="icon">
+            </a>
         </div>
     </nav>
 
