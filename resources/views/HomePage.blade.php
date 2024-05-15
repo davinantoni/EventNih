@@ -1,20 +1,29 @@
 @extends('Layout.layout')
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/css/HomePage.css">
+</head>
+</html>
+
 @section('title', 'Home')
 @section('content')
-    <h1>HomePage</h1>
-    <h1>Event</h1>
-    <div>
-        @foreach ($event as $events)
-        <tr>
-            <td>{{ $loop->iteration }}</td> <br>
-            <td>Title : {{ $events->Title }} </td> <br>
-            <td>Date : {{ $events->Date }} </td> <br>
-            <td>Location : {{ $events->Location }} </td> <br>
-            <td>Price : {{ $events->Price }} </td> <br>
-            <td>Description :{{ $events->event_details->Description }} </td> <br>
-            <td>Organizer Name :{{ $events->event_organizers->OrganizerName }} </td>  <br>
-        </tr>
-        <br>
-    @endforeach
+    <div class="container">
+        <h1>Event</h1>
+        <div class="card-container">
+            @foreach ($event as $events)
+            <div class="card">
+                <img src="{{ asset('assets/FotoAcara/'.$events->Photo)  }}" alt="Event Photo" class="card-image">
+                <div class="card-content">
+                    <h2 class="card-title">{{ $events->Title }}</h2>
+                    <p class="card-date">{{ date('j F Y', strtotime($events->Date)) }}</p>
+                    <p class="card-location">📍 {{ $events->Location }}</p>
+                    <p class="card-price">Rp {{ number_format($events->Price, 2) }}</p>
+                </div>
+            </div>
+            @endforeach 
+        </div>    
     </div>
+    
 @endsection
