@@ -56,6 +56,9 @@ nav {
     margin-right: 20px;
     text-decoration: none;
 }
+.create-event:hover{
+    color: #D3A5BE;
+}
 
 .icon {
     display: flex;

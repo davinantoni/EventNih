@@ -28,7 +28,7 @@
         <div class="navbar-right">
             <a href="" class="create-event">Buat Event</a>
             <a href="">
-                <img src="/assets/shopping-cart.png" alt="Cart" class="icon">
+                <img    src="/assets/shopping-cart.png" alt="Cart" class="icon">
             </a>
             <a href="">
                 <img src="/assets/profile.png" alt="Profile" class="icon">
