@@ -8,3 +8,4 @@ use App\Http\Controllers\EventController;
 // });
 
 Route::get('/', [EventController::class, 'index']);
+Route::get('/{id}', [EventController::class, 'show']);

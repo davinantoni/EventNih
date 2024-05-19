@@ -44,4 +44,9 @@ class EventController extends Controller
 
         return view('HomePage', ['event' => $events, 'locations' => $locations, 'eventTypes' => $eventTypes]);
     }
+
+    public function show($id){
+        $event = Event::with(['event_details'])->findOrFail($id);
+        return view('Event-Detail', ['event' => $event]);
+    }
 }
