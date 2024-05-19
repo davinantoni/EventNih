@@ -20,10 +20,12 @@
             </a>
         </div>
         <div class="navbar-center">
-            <input type="text" class="search-input" placeholder="Find your favorite event here">
-            <button class="search-button">
-                <img src="/assets/search.png" alt="Search">
-            </button>
+            <form action="" method="GET">
+                <input type="text" class="search-input" placeholder="Find your favorite event here" name="keyword">
+                <button class="search-button">
+                    <img src="/assets/search.png" alt="Search">
+                </button>
+            </form>
         </div>
         <div class="navbar-right">
             <a href="" class="create-event">Create Event</a>

@@ -15,6 +15,12 @@ class EventController extends Controller
         $locations = Event::select('City')->distinct()->pluck('City');
         $eventTypes = EventType::pluck('Type_name');
         $events = Event::with(['event_types', 'event_organizers', 'event_details']);
+        $keyword = $request->keyword;
+
+        if ($request->has('keyword') && $request->keyword != '') {
+            $events->where('Title', 'LIKE', '%' . $keyword . '%')->orWhere('City', 'LIKE', '%' . $keyword . '%')
+            ->orWhere('Location', 'LIKE', '%' . $keyword . '%');
+        }
 
         if ($request->has('location') && $request->location != '') {
             $events->where('City', $request->location);
