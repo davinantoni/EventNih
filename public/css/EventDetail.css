@@ -1,0 +1,43 @@
+.detail-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+}
+
+.event-image{
+    width: 620px;
+    height: 420px;
+    padding-right: 100px;
+}
+
+.event-title{
+    font-size: 38px;
+    font-weight: 600;
+}
+
+.event-date, .event-time, .event-location{
+    font-size: 18px;
+    font-weight: 800;
+    color: #000000;
+    opacity: 50%;
+}
+
+.event-price{
+    font-size: 38px;
+    font-weight: 500;
+}
+
+.event-detail button{
+    font-size: 25px;
+    color: white;
+    font-weight: 600;
+    background-color: #35374B;
+    border-radius: 40px;
+    padding: 10px 40px;
+    cursor: pointer;
+}
+
+.event-description{
+    padding: 40px 180px;
+}

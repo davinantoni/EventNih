@@ -1,0 +1,157 @@
+.swiper {
+    width: 1220px;
+    height: 600px;
+    margin: 6rem 0;
+} 
+
+.swiper-wrapper {
+    margin-bottom: 100rem;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    border-radius: 40px;
+}
+
+
+.filter-container {
+    background-color: #35374B;
+    padding: 15px;
+    border-radius: 15px;
+    width: 100%;
+    /* max-width: 800px; */
+    max-width: 1214px;
+    margin: 0 auto;
+}
+
+.filter-form form{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+.filter-container select,
+.filter-button button {
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.filter-container select {
+    background-color: #FFFFFF;
+    color: #D3A5BE;
+    width: 300px;
+    height: 50px;
+}
+
+.filter-button{
+    text-align: center  ;
+   
+}
+
+.filter-button button[type="submit"] {
+    background-color: #6B5B95;
+    color: white;
+    cursor: pointer;
+}
+
+.filter-button button[type="button"] {
+    background-color: #D1D1D1;
+    color: #333;
+    cursor: pointer;
+}
+
+.filter-container button[type="submit"]:hover,
+.filter-container button[type="button"]:hover {
+    opacity: 0.8;
+}
+
+/* .filter-container button {
+    margin-left: 200px;
+} */
+
+/* .filter-container button[type="button"] {
+    margin-left: 10px;
+} */
+
+.eventCard-container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-left: 50px;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    cursor: pointer;
+}
+
+.card-container a{
+    text-decoration: none;
+    
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 280px;
+    margin-bottom: 40px;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card-image {
+    width: 100%;
+    height: 250px;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.card-title {
+    font-size: 18px;
+    color: #050316;
+    font-weight: bold;
+    margin-top: -10px;
+}
+
+.card-date, .card-location, .card-price {
+    font-size: 14px;
+    color: #555555;
+    margin: 5px 0;
+}
+
+.card-price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #000000;
+}
