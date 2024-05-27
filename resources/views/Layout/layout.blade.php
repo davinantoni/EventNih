@@ -29,7 +29,7 @@
         </div>
         <div class="navbar-right">
             <a href="" class="create-event">Create Event</a>
-            <a href="">
+            <a href="/ShoppingCart">
                 <img    src="/assets/shopping-cart.png" alt="Cart" class="icon">
             </a>
             <a href="">

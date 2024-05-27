@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\User;
 use App\Models\EventType;
 use App\Models\EventDetail;
 use App\Models\EventOrganizer;
@@ -25,5 +26,15 @@ class Event extends Model
     public function event_organizers()
     {
         return $this->belongsTo(EventOrganizer::class, 'organizer_id', 'id');
+    }
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class, 'user_events', 'events_id', 'users_id');
+    }
+
+    public function carts()
+    {
+        return $this->belongsToMany(Cart::class, 'events_carts', 'events_id', 'carts_id');
     }
 }

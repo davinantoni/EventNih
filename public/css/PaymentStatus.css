@@ -1,0 +1,57 @@
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 70px;
+    margin-left: 25rem;
+    margin-right: 25rem;
+    margin-bottom: 100px;
+    border-radius: 15px; 
+}
+
+.container img{
+    width: 326px;
+    height: 300px;
+}
+
+h2{
+    margin-top: -20px;
+    font-size: 32px;
+}
+
+.payBtn{
+    display: flex;
+    align-items: center;
+    margin-top: 60px;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-bottom: 100px; 
+    justify-content: center;
+    border : 1.5px solid #35374B;
+    border-radius: 25px;
+    font-size: 20px;
+    align-items: right;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+p{
+    margin-left: 35px;
+    margin-right: 35px;
+}
+
+.payBtn a {
+    color: inherit; 
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.payBtn:hover {
+    background-color: #35374B;
+}
+
+.payBtn:hover a {
+    color: white;
+}
