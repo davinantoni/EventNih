@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Session;
 use App\Models\Cart;
 use Illuminate\Http\Request;
+
 
 class CartController extends Controller
 {
@@ -15,7 +17,7 @@ class CartController extends Controller
                 $totalPrice += $event->Price;
             }
         }
-        session()->put('totalPrice', $totalPrice);
+        Session::put('totalPrice', $totalPrice);
         return view('ShoppingCartPage', ['eventCart' => $cart, 'totalPrice' => $totalPrice]);
     }
 }

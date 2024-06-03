@@ -4,7 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Event;
 use App\Models\EventType;
+use App\Models\EventDetail;
 use Illuminate\Http\Request;
+use App\Models\EventOrganizer;
+use Illuminate\Support\Facades\Session;
+use App\Http\Requests\createEventRequest;
 
 class EventController extends Controller
 {
@@ -54,5 +58,51 @@ class EventController extends Controller
     public function show($id){
         $event = Event::with(['event_details'])->findOrFail($id);
         return view('Event-Detail', ['event' => $event]);
+    }
+
+    public function create(){
+        $eventTypes = EventType::select('id', 'Type_name')->get();
+        return view('CreateEvent', ['eventTypes' => $eventTypes]);
+    }
+
+    public function store(createEventRequest $request){
+        $pictureName = '';
+        if ($request->hasFile('photo')) {
+            $file = $request->file('photo');
+            $pictureName = time() . '_' . $file->getClientOriginalName(); // Generate a unique file name
+            $file->move(public_path('assets/FotoAcara'), $pictureName);
+            // $file->storeAs('photos', $pictureName); // Save the file to the 'photos' directory
+        }
+        $organizer = new EventOrganizer;
+        $organizer->OrganizerName = $request->OrganizerName;
+        $organizer->OrganizerEmail = $request->OrganizerEmail;
+        $organizer->OrganizerPhoneNumber = $request->OrganizerPhoneNumber;
+        $organizer->save();
+
+        $event = new Event;
+        $event->Title = $request->Title;      
+        $event->EventType_id = $request->EventType_id;
+        $event->City = $request->City;
+        $event->Location = $request->Location;
+        $event->Date = $request->Date;
+        $event->Price = $request->Price;
+        $event->organizer_id = $organizer->id;
+        $event->Photo = $pictureName;
+        $event->save();
+
+        $eventDetail = new EventDetail;
+        $eventDetail->event_id = $event->id;
+        $eventDetail->Description = $request->Description;
+        $eventDetail->Start_time = $request->Start_time;
+        $eventDetail->End_time = $request->End_time;
+        $eventDetail->Seat = $request->Seat;
+        $eventDetail->save();
+
+        if($event && $organizer && $eventDetail){
+            Session::flash('status', 'success');
+            Session::flash('message', 'Event successfully added!');
+        }
+
+        return redirect()->back();
     }
 }

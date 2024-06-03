@@ -69,6 +69,11 @@ nav {
     cursor: pointer;
 }
 
+textarea::placeholder, input::placeholder, select{
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+  }
+  
 .footer {
     background-color: #3b3b58;
     color: #ffffff;
@@ -87,6 +92,10 @@ nav {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
+}
+
+.footer-logo img{
+    height: 50px;
 }
 
 .footer-description {

@@ -19,10 +19,10 @@
         <div class = container>
             <div class = container-header>
                 <h2>Total Payment</h2>   
-                <h2>Rp. 1.492.402</h2>     
+                <h2>Rp. {{ number_format($totalPrice, 0, ',', '.') }}</h2>     
             </div>
 
-            <div class = content1 >
+            <div class = content >
                 <img src="{{ asset('assets/FotoPayment/gopayLogo.png')  }}" class="payment-img">
                 <p>GoPay</p>   
                 <div class = radioBtn>
@@ -30,7 +30,7 @@
                 </div>
             </div>
 
-            <div class = content2 >
+            <div class = content >
                 <img src="{{ asset('assets/FotoPayment/danaLogo.png')  }}" class="payment-img">
                 <p>DANA</p>
                 <div class = radioBtn>
@@ -38,7 +38,7 @@
                 </div>
             </div>
 
-            <div class = content3 >
+            <div class = content >
                 <img src="{{ asset('assets/FotoPayment/linkajaLogo.png')  }}" class="payment-img">
                 <p>LinkAja</p>
                 <div class = radioBtn>
@@ -46,7 +46,7 @@
                 </div>
             </div>
 
-            <div class = content4 >
+            <div class = content >
                 <img src="{{ asset('assets/FotoPayment/bcaLogo.png')  }}" class="payment-img">
                 <p>BCA</p>
                 <div class = radioBtn>

@@ -13,7 +13,7 @@
     <title>EventNih! | @yield('title')</title>
 </head>
 <body>
-    <nav class="navbar">
+    <nav class="navbarr">
         <div class="navbar-left">
             <a href="/">
                 <img src="/assets/logo.png" alt="Logo" class="logo">
@@ -28,11 +28,11 @@
             </form>
         </div>
         <div class="navbar-right">
-            <a href="" class="create-event">Create Event</a>
+            <a href="/CreateEvent" class="create-event">Create Event</a>
             <a href="/ShoppingCart">
-                <img    src="/assets/shopping-cart.png" alt="Cart" class="icon">
+                <img src="/assets/shopping-cart.png" alt="Cart" class="icon">
             </a>
-            <a href="">
+            <a href="/Profile">
                 <img src="/assets/profile.png" alt="Profile" class="icon">
             </a>
         </div>
@@ -60,7 +60,7 @@
             </ul>
         </div>
         <div class="footer-bottom">
-            <p>©EventNih!, 2024. ALL RIGHTS RESERVED <span class="separator">•</span> <a href="">Contact Us</a></p>
+            <p>©EventNih!, 2024. ALL RIGHTS RESERVED <span class="separator">•</span> <a href="/CustomerService">Contact Us</a></p>
         </div>
     </footer>
 </body>

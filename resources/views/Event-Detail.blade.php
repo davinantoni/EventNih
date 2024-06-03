@@ -17,7 +17,7 @@
         <p class="event-time">{{ date('H:i', strtotime($event->event_details->Start_time)) }} - {{ date('H:i', strtotime($event->event_details->End_time)) }} WIB</p>
         <p class="event-location">{{ $event->Location }}, {{$event->City}}</p>
         <p class="event-price">Rp. {{ number_format($event->Price, 2) }}</p>
-        <button type="button">Buy Ticket</button>
+        <button type="button" onclick="window.location.href='/ShoppingCart'">Add to Cart</button>
     </div>
 </div>
 
