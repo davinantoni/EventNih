@@ -35,6 +35,17 @@ class Event extends Model
 
     public function carts()
     {
-        return $this->belongsToMany(Cart::class, 'events_carts', 'events_id', 'carts_id');
+        return $this->belongsToMany(Cart::class, 'events_carts', 'events_id', 'carts_id')->withTimestamps();
     }
+
+    public function transactionDetail()
+    {
+        return $this->hasMany(TransactionDetail::class, 'events_id', 'id');
+    }
+
+    public function transaction_headers()
+    {
+        return $this->belongsToMany(TransactionHeader::class, 'transaction_details', 'events_id', 'transactionHeaders_Id')->withTimestamps();
+    }
+
 }

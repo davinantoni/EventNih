@@ -27,7 +27,13 @@ class DatabaseSeeder extends Seeder
             EventTypeSeeder::class,
             EventOrganizerSeeder::class,
             EventSeeder::class,
-            EventDetailSeeder::class
+            EventDetailSeeder::class,
+            CartSeeder::class,
+            EventCartSeeder::class,
+            TransactionHeaderSeeder::class,
+            TransactionDetailSeeder::class,
+            RoleSeeder::class,
+            UserSeeder::class
         ]);
     }
 }

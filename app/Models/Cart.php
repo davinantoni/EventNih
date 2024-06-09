@@ -21,6 +21,6 @@ class Cart extends Model
 
     public function events()
     {
-        return $this->belongsToMany(Event::class, 'events_carts', 'carts_id', 'events_id');
+        return $this->belongsToMany(Event::class, 'events_carts', 'carts_id', 'events_id')->withTimestamps();
     }
 }
