@@ -1,0 +1,254 @@
+
+
+/*=============== GOOGLE FONTS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;900&display=swap');
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+    --header-height: 3.5rem;
+
+    /*========== Colors ==========*/
+    --title-color: hsl(250, 8%, 15%);
+    --text-color: hsl(250, 8%, 35%);
+    --body-color: hsl(250, 60%, 98%);
+    --container-color: #fff;
+    --shadow: hsla(0, 0%, 15%, .1);
+    --scroll-bar-color: hsl(250, 12%, 90%);
+    --scroll-thumb-color: hsl(250, 12%, 80%);
+    --hue: 0;
+    --first-color: hsl(var(--hue), 88%, 61%);
+    --first-color-alt: hsl(var(--hue), 88%, 58%);
+    --main-color:#35374B;
+    --main-second-color:#3b3b58;
+
+    /*========== Font and typography ==========*/
+    --body-font: 'Poppins', sans-serif;
+    --biggest-font-size: 4rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .813rem;
+
+    /*========== Font weight ==========*/
+    --font-medium: 500;
+    --font-bold: 600;
+
+    /*========== Margenes Bottom ==========*/
+    --mb-0-5: .5rem;
+    --mb-0-75: .75rem;
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-2-5: 2.5rem;
+    --mb-3: 3rem;
+    --mb-6: 6rem;
+
+    /*========== z index ==========*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+}
+
+body {
+    background-color: var(--body-color);
+    margin-top: 100px;
+}
+
+.ui-w-80 {
+    width : 80px !important;
+    height: auto;
+}
+
+.btn-default {
+    border-color: rgba(24, 28, 33, 0.1);
+    background  : rgba(0, 0, 0, 0);
+    color       : #4E5155;
+}
+
+label.btn {
+    margin-bottom: 0;
+}
+
+.btn-custom {
+    background-color:var(--main-color)!important; /* Ganti dengan warna yang Anda inginkan */
+    background  : transparent !important;
+    border-color: var(--main-color)!important; /* Sesuaikan warna border jika diperlukan */
+    margin-bottom: 30px;
+}
+.btn-custom:hover{
+
+    border-color: var(--main-color)!important;
+    background  : var(--main-color)!important;
+    color       : #f8f8f8 !important;
+}
+
+.btn {
+    cursor: pointer;
+}
+
+.text-light {
+    color: #babbbc !important;
+}
+
+.card {
+    background-clip: padding-box;
+    box-shadow: -2px 0 10px var(--shadow);
+    
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    cursor: pointer;
+}
+
+.card-container a{
+    text-decoration: none;
+    
+}
+    
+.event-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 280px;
+    margin-bottom: 40px;
+    position: relative;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card-image {
+    width: 100%;
+    height: 250px;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.card-title {
+    font-size: 18px;
+    color: #050316;
+    font-weight: bold;
+    margin-top: -10px;
+}
+
+.card-date, .card-location, .card-price {
+    font-size: 14px;
+    color: #555555;
+    margin: 5px 0;
+}
+
+.card-price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #000000;
+}
+
+.card-footer {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.card-quantity {
+    font-size: 14px;
+    color: #555555;
+}
+
+.row-bordered {
+    overflow: hidden;
+}
+
+.account-settings-fileinput {
+    position  : absolute;
+    visibility: hidden;
+    width     : 1px;
+    height    : 1px;
+    opacity   : 0;
+}
+
+.profile-picture{
+    width: 80px; /* Sesuaikan dengan ukuran yang Anda inginkan */
+    height: 80px; /* Sesuaikan dengan ukuran yang Anda inginkan */
+    border-radius: 50%; /* Nilai 50% akan membuat gambar menjadi lingkaran sempurna */
+    object-fit: cover; /* Opsional: agar gambar terpotong sesuai dengan ukuran lingkaran */
+}
+
+.alert {
+  border-radius: 50-px; /* Contoh: border melengkung */
+}
+
+.alert-warnings {
+  /* Gaya khusus untuk alert warning */
+  background-color: var(--container-color); /* Ubah warna latar belakang */
+  border-color: #5c162b; /* Ubah warna border */
+}
+.mt-3 {
+    /* Gaya untuk margin top */
+    margin-top: 1rem; /* Ubah jarak margin top */
+}
+
+.account-settings-links .list-group-item.active {
+    font-weight: bold !important;
+}
+
+html:not(.dark-style) .account-settings-links .list-group-item.active {
+    background: transparent !important;
+}
+
+.account-settings-multiselect~.select2-container {
+    width: 100% !important;
+}
+
+.light-style .account-settings-links .list-group-item {
+    padding     : 0.85rem 1.5rem;
+    border-color: rgba(24, 28, 33, 0.03) !important;
+}
+
+.light-style .account-settings-links .list-group-item.active {
+    color: #4e5155 !important;
+}
+
+.material-style .account-settings-links .list-group-item {
+    padding     : 0.85rem 1.5rem;
+    border-color: rgba(24, 28, 33, 0.03) !important;
+}
+
+.material-style .account-settings-links .list-group-item.active {
+    color: #4e5155 !important;
+}
+
+.dark-style .account-settings-links .list-group-item {
+    padding     : 0.85rem 1.5rem;
+    border-color: rgba(255, 255, 255, 0.03) !important;
+}
+
+.dark-style .account-settings-links .list-group-item.active {
+    color: #fff !important;
+}
+
+.light-style .account-settings-links .list-group-item.active {
+    color: #4E5155 !important;
+}
+
+.light-style .account-settings-links .list-group-item {
+    padding     : 0.85rem 1.5rem;
+    border-color: rgba(24, 28, 33, 0.03) !important;
+}
+
+.empty-history-message {
+    text-align: center;
+    font-size: 18px;
+    color: #555;
+    margin-top: 20px;
+}
+
+

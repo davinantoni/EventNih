@@ -1,0 +1,167 @@
+.upload-banner {
+  /* max-width: 600px; */
+  height: 220px;
+  background-image: linear-gradient(#D9D9D9,#737373);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+.upload-container {
+  text-align: center;
+  cursor: pointer;
+}
+
+.upload-icon {
+  font-size: 48px;
+  color: #ffffff;
+}
+
+.upload-text {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #ffffff;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #ffffff;
+}
+
+.event-form{
+  display: flex;
+  flex-direction: column;
+}
+
+.event-section{
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 15px;
+}
+
+.event-section textarea{
+  height: 61px;
+  margin-bottom: -7px;
+}
+
+.city-location-container{
+  display: flex;
+}
+
+.date-input{
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.time-input{
+  display: flex;
+}
+
+.date-time-container input {
+  height: 25px;
+  margin-right: 5px;
+}
+
+.seat-price-container{
+  display: flex;
+}
+
+.seat-price-container input {
+  margin-right: 5px;
+}
+
+.organizer-section{
+  display: flex;
+  justify-content: space-around;
+}
+
+.organizer-title{
+  padding-left: 5px;
+}
+
+.left-section, .right-section{
+  width: 48%;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 80%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  color: #757575;
+}
+
+.date-input input{
+  width: 48%;
+}
+
+.loc-input input{
+  width: 103%;
+}
+.city-input input{
+  width: 85%;
+}
+
+.createButton{
+  margin-top: 20px;
+  margin-bottom: 60px;
+  text-decoration: none;
+  height: 40px;
+  width: 300px;
+  font-weight: 600;
+  border : 1.5px solid #35374B;
+  border-radius: 25px;
+  color: black;
+  background-color: transparent;
+  cursor: pointer;
+  align-self: center;
+}
+
+.createButton:hover {
+  background-color: #35374B;
+  color: white;
+}
+
+.error-alert{
+  border: 1px solid;
+	margin: 10px 0px;
+	padding: 15px 10px 15px 50px;
+	background-repeat: no-repeat;
+	background-position: 10px center;
+  color: #D8000C;
+  font-size: 13px;
+  background-color: #FFBABA;
+  background-image: url('https://i.imgur.com/GnyDvKN.png');
+}
+
+.success-alert{
+  border: 1px solid;
+	margin: 10px 0px;
+	padding: 15px 10px 15px 50px;
+	background-repeat: no-repeat;
+	background-position: 10px center;
+  color: #270;
+  background-color: #DFF2BF;
+  text-align: center;
+}

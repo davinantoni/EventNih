@@ -1,0 +1,326 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;900&display=swap');
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+    --header-height: 3.5rem;
+
+    /*========== Colors ==========*/
+    --title-color: hsl(250, 8%, 15%);
+    --text-color: hsl(250, 8%, 35%);
+    --body-color: hsl(250, 60%, 98%);
+    --container-color: #fff;
+    --shadow: hsla(0, 0%, 15%, .1);
+    --scroll-bar-color: hsl(250, 12%, 90%);
+    --scroll-thumb-color: hsl(250, 12%, 80%);
+    --hue: 0;
+    --first-color: hsl(var(--hue), 88%, 61%);
+    --first-color-alt: hsl(var(--hue), 88%, 58%);
+    --main-color:#35374B;
+    --main-second-color:#3b3b58;
+
+    /*========== Font and typography ==========*/
+    --body-font: 'Poppins';
+    --biggest-font-size: 4rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .813rem;
+
+    /*========== Font weight ==========*/
+    --font-medium: 500;
+    --font-bold: 600;
+
+    /*========== Margenes Bottom ==========*/
+    --mb-0-5: .5rem;
+    --mb-0-75: .75rem;
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-2-5: 2.5rem;
+    --mb-3: 3rem;
+    --mb-6: 6rem;
+
+    /*========== z index ==========*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+}
+
+/* Responsive typography */
+@media screen and (max-width: 992px) {
+    :root {
+        --biggest-font-size: 2rem;
+        --h1-font-size: 1.5rem;
+        --h2-font-size: 1.25rem;
+        --h3-font-size: 1rem;
+        --normal-font-size: .938rem;
+        --small-font-size: .813rem;
+        --smaller-font-size: .75rem;
+    }
+}
+
+/*=============== BASE ===============*/
+/* * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body,
+button,
+input {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+}
+
+body {
+    background-color: var(--body-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;   
+} */
+
+/* h1, h2, h3, h4 {
+    color: var(--title-color);
+    font-weight: var(--font-medium);
+} */
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* img {
+    max-width: 100%;
+    height: auto;
+} */
+
+button {
+    cursor: pointer;
+}
+
+button,
+input {
+    border: none;
+    outline: none;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.section {
+    padding: 7rem 0 2rem;
+}
+
+.section__title,
+.breadcrumb__title {
+    font-size: var(--h1-font-size);
+}
+
+.section__title,
+.breadcrumb__subtitle {
+    margin-bottom: var(--mb-3);
+}
+
+.section__title,
+.breadcrumb__title,
+.breadcrumb__subtitle {
+    text-align: center;
+}
+
+/*=============== LAYOUT ===============*/
+.container {
+    max-width: 968px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.grid {
+    display: grid;
+}
+
+
+
+/*=============== customer__service SLIDE ===============*/
+
+.customer__service{
+    
+    /* background-color: var(--body-color); */
+    /* box-shadow: -2px 0 10px var(--shadow); */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 10;
+    top: 0;
+    padding: 3.5rem 6rem;
+    
+    max-width: 90%; /* Batasan lebar maksimum pada layar besar */
+    margin: 0 auto; /* Pusatkan secara horizontal */
+
+}
+
+
+.customer__service__header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem; /* Menambahkan gap 1rem */
+    margin-bottom: 10px;
+}
+.customer__service__title-center,.customer__service__close {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+.customer__service__title-center{
+    font-size: var(--h2-font-size);
+}
+
+.customer__service__close{
+    color: var(--title-color);
+    font-size: var(--h2-font-size);
+    cursor: pointer;
+}
+
+.price__container{
+    display: grid ;
+    row-gap: 10rem;
+    flex-basis: 300px;
+    
+    
+}
+.customer__service__prices{
+    width: 1000px; 
+    height: 400px;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: space-between;
+
+   
+    background-color: var(--container-color);
+    border-radius: 20px;
+    
+    position: sticky; 
+    top: 200px;
+}
+
+
+.customer__service__prices-item, .customer__service__prices-total{
+    color: var(--title-color);
+}
+
+.customer__service__prices-item{
+    font-size: var(--small-font-size);
+    
+}
+
+.customer__service__prices-total{
+    font-size: var(--h3-font-size);
+    font-weight: var(--font-medium);
+}
+
+.customer__service__item-info-price{
+    /* Gaya tambahan untuk kelompok kiri jika diperlukan */
+    flex-grow: 1; /* Membuat div ini mengambil ruang yang tersisa */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.group__container{
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    margin-right: 4rem;
+    
+}
+.form-group {
+  /* display: block; Mengatur setiap form group menjadi block-level element */
+  width: 700px; 
+  /* margin: 0 auto;  */
+}
+.form-group2{
+    margin-top: 1rem;
+}
+
+.form-label{
+    font-size: large;
+}
+.underlined-input {
+    border: none; /* Menghilangkan border bawaan */
+    border-bottom: 1px solid black; /* Menambahkan garis bawah */
+    padding: 10px; /* Menambahkan sedikit padding atas dan bawah */
+    width: 100%; /* Membuat input memenuhi lebar container */
+    box-sizing: border-box; /* Memastikan padding dan border tidak menambah lebar element */
+
+}
+
+.form-label {
+  display: block; /* Mengatur label menjadi block-level element */
+  margin-bottom: 2px; /* Menambahkan jarak antara label dan input */
+  margin-top: 10px;
+  text-align: left; /* Menyelaraskan teks label ke kiri */
+  
+}
+
+.form-control,
+.alert {
+  width: 100%; /* Membuat input dan alert memenuhi lebar container */
+  box-sizing: border-box; /* Memastikan padding dan border tidak menambah lebar element */
+}
+
+.customer__service__prices-details {
+    text-align: center;
+}
+  
+.button__container{
+    margin-top: 1rem;
+}
+.send__button {
+    /* Tampilan dasar */
+    background-color: var(--first-color); /* Warna latar belakang */
+    color: white;                            /* Warna teks */
+    padding: 0.5rem 3rem;                    /* Padding */
+    border: none;                           /* Tanpa border */
+    border-radius: 10px;                     /* Sudut melengkung */
+    font-size: 1rem;                        /* Ukuran font */
+    cursor: pointer;                        /* Kursor berubah saat diarahkan */
+  
+    /* Efek hover */
+    transition: background-color 0.3s ease; /* Transisi halus saat hover */
+    
+  }
+  
+.send__button:hover{
+    background-color: var(--main-color); /* Warna latar belakang saat hover */
+}
+
+
+
+
+/*=============== BREAKPOINTS ===============*/
+/* For large devices */
+@media (max-width: 1200px) {
+  .customer__service {
+    max-width: 95%; /* Lebar lebih besar pada layar sedang */
+  }
+}
+
+/* Untuk layar dengan lebar maksimum 768px */
+@media (max-width: 768px) {
+  .customer__service {
+    max-width: 100%; /* Mengisi seluruh lebar layar pada layar kecil */
+    padding: 2rem; /* Tambahkan padding untuk tampilan yang lebih baik */
+  }
+}
