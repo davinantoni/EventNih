@@ -6,17 +6,21 @@ use App\Models\Cart;
 use App\Models\Event;
 use App\Models\EventCart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
 
 class CartController extends Controller
 {
     public function index(){
-        $cart = Cart::with(['events'])->get();
+        $userId = Auth::user()->id;
+        $cart = Cart::with(['events'])
+                ->where('users_id', $userId)
+                ->get();
         $totalPrice = 0;
         foreach ($cart as $carts) {
             foreach ($carts->events as $event) {
-                $totalPrice += $event->Price;
+                $totalPrice += $event->Price * $carts->Quantity;
             }
         }
         Session::put('totalPrice', $totalPrice);
@@ -31,8 +35,8 @@ class CartController extends Controller
             return response()->json(['message' => 'Event not found'], 404);
         }
 
-        // $userId = Auth::id(); // Assuming user is authenticated
-        $userId = 2;
+        $userId = Auth::user()->id; // Assuming user is authenticated
+        // $userId = 2;
 
         // Check if the event is already in the cart
         $cartItem = Cart::where('events_id', $eventId)->where('users_id', $userId)->first();
@@ -55,8 +59,7 @@ class CartController extends Controller
     }
 
     public function updateQuantity(Request $request){
-        // $userId = Auth::id(); // Assuming user is authenticated
-        $userId = 1;
+        $userId = Auth::user()->id;
         $cartItem = Cart::where('id', $request->cart_id)->where('users_id', $userId)->first();
         if ($cartItem) {
             $cartItem->Quantity = $request->quantity;
@@ -66,8 +69,7 @@ class CartController extends Controller
     }
     public function deleteItem(Request $request)
     {
-        // $userId = Auth::id(); // Assuming user is authenticated
-        $userId = 1;
+        $userId = Auth::user()->id;
         $cartItem = Cart::where('id', $request->cart_id)->where('users_id', $userId)->first();
 
         EventCart::where('carts_id', $cartItem->id)->delete();

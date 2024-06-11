@@ -34,7 +34,7 @@
             </a>
             <a href="/Profile">
                 <img src="/assets/profile.png" alt="Profile" class="icon">
-            </a>
+            </a>          
         </div>
     </nav>
 

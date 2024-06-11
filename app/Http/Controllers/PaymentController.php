@@ -6,6 +6,7 @@ use App\Models\Cart;
 use Illuminate\Http\Request;
 use App\Models\TransactionDetail;
 use App\Models\TransactionHeader;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
 class PaymentController extends Controller
@@ -18,7 +19,7 @@ class PaymentController extends Controller
     public function store(Request $request)
     {
         // $userId = Auth::id();
-        $userId = 1;
+        $userId = Auth::user()->id;
         // $paymentMethod = $request->input('payment_method'); // Mendapatkan metode pembayaran yang dipilih
 
         $carts = Cart::where('users_id', $userId)->get();
@@ -46,7 +47,10 @@ class PaymentController extends Controller
         }
 
         // Hapus keranjang setelah pembayaran berhasil
-        // Cart::where('users_id', $userId)->delete();
+        foreach ($carts as $cart) {
+            $cart->events()->detach();
+        }
+        Cart::where('users_id', $userId)->delete();
 
         return redirect()->route('PaymentStatus');
     }
