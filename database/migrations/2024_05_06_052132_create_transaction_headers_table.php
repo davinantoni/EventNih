@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('users_id')->required();
             $table->foreign('users_id')->references('id')->on('users')->onDelete('restrict');
-            $table->unsignedBigInteger('carts_id')->required();
-            $table->foreign('carts_id')->references('id')->on('carts')->onDelete('restrict');
+            // $table->unsignedBigInteger('carts_id')->required();
+            // $table->foreign('carts_id')->references('id')->on('carts')->onDelete('restrict');
             $table->date('TransactionDate');
             $table->timestamps();
         });

@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('users_id')->required();
             $table->foreign('users_id')->references('id')->on('users')->onDelete('restrict');
+            $table->unsignedBigInteger('events_id')->required();
+            $table->foreign('events_id')->references('id')->on('events')->onDelete('restrict');
             $table->integer('Quantity')->required();
             $table->timestamps();
         });
